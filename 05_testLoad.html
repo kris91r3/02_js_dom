@@ -68,72 +68,78 @@
     </main>
     <footer>Footer</footer>
     <script>
-      const titel = document.querySelector("header");
-      console.log(titel);
-      titel.textContent = "billedegalleri";
+      document.addEventListener("DOMContentLoaded", start);
 
-      const main = document.querySelector("main");
-      console.log(main);
+      function start() {
+        console.log("DOM er loaded");
 
-      const h2 = document.querySelector("h2");
-      console.log(h2);
+        const titel = document.querySelector("header");
+        console.log(titel);
+        titel.textContent = "billedegalleri";
 
-      const article1 = document.querySelector("#article1");
-      console.log(article1);
-      const article2 = document.querySelector("#article2");
-      console.log(article2);
+        const main = document.querySelector("main");
+        console.log(main);
 
-      const img1 = document.querySelector("article:nth-child(1) img");
-      console.log(img1);
-      const img2 = document.querySelector("article:nth-child(2) img");
-      console.log(img2);
-      img1.src = "https://placeimg.com/640/480/any/grayscale";
-      img1.alt = "Nu er billedet gråt";
-      img2.src = "https://placeimg.com/640/480/animals/sepia";
-      img2.alt = "Nu er billedet et dyr";
+        const h2 = document.querySelector("h2");
+        console.log(h2);
 
-      const h3nr1 = document.querySelector("article:nth-child(1) h3");
-      console.log(h3nr1);
-      const h3nr2 = document.querySelector("article:nth-child(2) h3");
-      console.log(h3nr2);
-      h3nr1.innerHTML = "<i>Hell</i>";
-      h3nr2.textContent = "Yeah";
+        const article1 = document.querySelector("#article1");
+        console.log(article1);
+        const article2 = document.querySelector("#article2");
+        console.log(article2);
 
-      const p1 = document.querySelector("article:nth-child(1) p");
-      console.log(p1);
-      const p2 = document.querySelector("article:nth-child(2) p");
-      console.log(p2);
-      p1.textContent = "Jeg skriver bare et eller andet for at tjekke";
-      p2.innerHTML = "Jeg tror <b>kraftedeme</b> det lykkedes!";
+        const img1 = document.querySelector("article:nth-child(1) img");
+        console.log(img1);
+        const img2 = document.querySelector("article:nth-child(2) img");
+        console.log(img2);
+        img1.src = "https://placeimg.com/640/480/any/grayscale";
+        img1.alt = "Nu er billedet gråt";
+        img2.src = "https://placeimg.com/640/480/animals/sepia";
+        img2.alt = "Nu er billedet et dyr";
 
-      const footer = document.querySelector("Footer");
-      console.log(footer);
+        const h3nr1 = document.querySelector("article:nth-child(1) h3");
+        console.log(h3nr1);
+        const h3nr2 = document.querySelector("article:nth-child(2) h3");
+        console.log(h3nr2);
+        h3nr1.innerHTML = "<i>Hell</i>";
+        h3nr2.textContent = "Yeah";
 
-      // Jeg har rykket section her ned, da den skal bruge til en ny article//
-      let mainSection = document.querySelector("section");
-      console.log(mainSection);
+        const p1 = document.querySelector("article:nth-child(1) p");
+        console.log(p1);
+        const p2 = document.querySelector("article:nth-child(2) p");
+        console.log(p2);
+        p1.textContent = "Jeg skriver bare et eller andet for at tjekke";
+        p2.innerHTML = "Jeg tror <b>kraftedeme</b> det lykkedes!";
 
-      //Her laver jeg en ny article//
+        const footer = document.querySelector("Footer");
+        console.log(footer);
 
-      let newArticle = document.createElement("article");
+        // Jeg har rykket section her ned, da den skal bruge til en ny article//
+        let mainSection = document.querySelector("section");
+        console.log(mainSection);
 
-      let nytbillede = document.createElement("img");
-      nytbillede.src = "https://placeimg.com/640/480/tech";
-      newArticle.appendChild(nytbillede);
+        //Her laver jeg en ny article//
 
-      let overskrift = document.createElement("h3");
-      let overskriftText = document.createTextNode("Article 3.");
-      overskrift.appendChild(overskriftText);
-      newArticle.appendChild(overskrift);
+        let newArticle = document.createElement("article");
 
-      let paragraf = document.createElement("p");
-      let paragrafText = document.createTextNode(
-        "Nu skriver jeg igen bare et eller andet, for at se om det virker"
-      );
-      paragraf.appendChild(paragrafText);
-      newArticle.appendChild(paragraf);
+        let nytbillede = document.createElement("img");
+        nytbillede.src = "https://placeimg.com/640/480/tech";
+        newArticle.appendChild(nytbillede);
 
-      mainSection.appendChild(newArticle);
+        let overskrift = document.createElement("h3");
+        let overskriftText = document.createTextNode("Article 3.");
+        overskrift.appendChild(overskriftText);
+        newArticle.appendChild(overskrift);
+
+        let paragraf = document.createElement("p");
+        let paragrafText = document.createTextNode(
+          "Nu skriver jeg igen bare et eller andet, for at se om det virker"
+        );
+        paragraf.appendChild(paragrafText);
+        newArticle.appendChild(paragraf);
+
+        mainSection.appendChild(newArticle);
+      }
     </script>
   </body>
 </html>
