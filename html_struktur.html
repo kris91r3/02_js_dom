@@ -5,7 +5,59 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta name="robots" content="noindex" />
+
     <title>Document</title>
+    <style>
+      img {
+        width: 100%;
+      }
+
+      header,
+      footer {
+        text-align: center;
+        border: 2px solid black;
+        padding: 8px;
+      }
+
+      section {
+        max-width: 1000px;
+        display: grid;
+        grid-template-columns: repeat(auto-fill, minmax(400px, 1fr));
+        gap: 30px;
+      }
+
+      article {
+        border: 2px solid black;
+      }
+    </style>
   </head>
-  <body></body>
+  <body>
+    <header><h1>Titel</h1></header>
+    <main>
+      <h2>Undertitel</h2>
+      <section>
+        <article>
+          <img src="https://placeimg.com/640/480/nature" alt="nature" />
+          <h3>Article1</h3>
+          <p>
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Eaque totam
+            tenetur iure voluptatem ut rem magni dolor quos ipsa tempore
+            doloremque quo quae eveniet saepe alias, maiores reprehenderit
+            perspiciatis voluptate.
+          </p>
+        </article>
+        <article>
+          <img src="https://placeimg.com/640/480/people" alt="people" />
+          <h3>Article1</h3>
+          <p>
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Eaque totam
+            tenetur iure voluptatem ut rem magni dolor quos ipsa tempore
+            doloremque quo quae eveniet saepe alias, maiores reprehenderit
+            perspiciatis voluptate.
+          </p>
+        </article>
+      </section>
+    </main>
+    <footer>Footer</footer>
+  </body>
 </html>
