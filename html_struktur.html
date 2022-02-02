@@ -62,12 +62,18 @@
     <script>
       const titel = document.querySelector("header");
       console.log(titel);
-      titel.textContent = "billedegalleri";
-      // titel.innerHTML = "<h1>Billeder</h1>";
 
-      const pic1 = document.querySelector("article:first-child img");
-      console.log(pic1);
-      pic1.alt = "Jeg ændrer attribut teksten";
+      document.addEventListener("DOMContentLoaded", start);
+
+      function start() {
+        console.log("DOM er loaded");
+        titel.textContent = "billedegalleri";
+        // titel.innerHTML = "<h1>Billeder</h1>";
+
+        const pic1 = document.querySelector("article:first-child img");
+        console.log(pic1);
+        pic1.alt = "Jeg ændrer attribut teksten";
+      }
     </script>
   </body>
 </html>
