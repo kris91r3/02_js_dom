@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="da">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="robots" content="noindex" />
+
+    <title>Document</title>
+    <style>
+      img {
+        width: 100%;
+      }
+
+      header,
+      footer {
+        text-align: center;
+        border: 2px solid black;
+        padding: 8px;
+      }
+
+      section {
+        max-width: 1000px;
+        display: grid;
+        grid-template-columns: repeat(auto-fill, minmax(400px, 1fr));
+        gap: 30px;
+      }
+
+      article {
+        border: 2px solid black;
+      }
+
+      article:nth-child(2) {
+        color: lime;
+      }
+
+      h3:first-of-type + p {
+        color: red;
+      }
+    </style>
+  </head>
+  <body>
+    <header>Titel</header>
+    <main>
+      <h2>Undertitel</h2>
+      <section>
+        <article id="article1">
+          <img src="https://placeimg.com/640/480/nature" alt="nature" />
+          <h3>Article1</h3>
+          <p>
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Eaque totam
+            tenetur iure voluptatem ut rem magni dolor quos ipsa tempore
+            doloremque quo quae eveniet saepe alias, maiores reprehenderit
+            perspiciatis voluptate.
+          </p>
+        </article>
+        <article id="article2">
+          <img src="https://placeimg.com/640/480/people" alt="people" />
+          <h3>Article1</h3>
+          <p>
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Eaque totam
+            tenetur iure voluptatem ut rem magni dolor quos ipsa tempore
+            doloremque quo quae eveniet saepe alias, maiores reprehenderit
+            perspiciatis voluptate.
+          </p>
+        </article>
+      </section>
+    </main>
+    <footer>Footer</footer>
+    <script>
+      const titel = document.querySelector("header");
+      console.log(titel);
+      titel.textContent = "billedegalleri";
+
+      const main = document.querySelector("main");
+      console.log(main);
+
+      const overskrift = document.querySelector("h2");
+      console.log(overskrift);
+
+      const section = document.querySelector("section");
+      console.log(section);
+
+      const article1 = document.querySelector("#article1");
+      console.log(article1);
+      const article2 = document.querySelector("#article2");
+      console.log(article2);
+
+      const img1 = document.querySelector("article:nth-child(1) img");
+      console.log(img1);
+      const img2 = document.querySelector("article:nth-child(2) img");
+      console.log(img2);
+
+      const h3nr1 = document.querySelector("article:nth-child(1) h3");
+      console.log(h3nr1);
+      const h3nr2 = document.querySelector("article:nth-child(2) h3");
+      console.log(h3nr2);
+      h3nr1.innerHTML = "<i>Hell</i>";
+      h3nr2.textContent = "Yeah";
+
+      const p1 = document.querySelector("article:nth-child(1) p");
+      console.log(p1);
+      const p2 = document.querySelector("article:nth-child(2) p");
+      console.log(p2);
+      p1.textContent = "Jeg skriver bare et eller andet for at tjekke";
+      p2.innerHTML = "Jeg tror <b>kraftedeme</b> det lykkedes!";
+
+      const footer = document.querySelector("Footer");
+      console.log(footer);
+    </script>
+  </body>
+</html>
