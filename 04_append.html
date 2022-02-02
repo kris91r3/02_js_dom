@@ -75,11 +75,8 @@
       const main = document.querySelector("main");
       console.log(main);
 
-      const overskrift = document.querySelector("h2");
-      console.log(overskrift);
-
-      const section = document.querySelector("section");
-      console.log(section);
+      const h2 = document.querySelector("h2");
+      console.log(h2);
 
       const article1 = document.querySelector("#article1");
       console.log(article1);
@@ -111,6 +108,32 @@
 
       const footer = document.querySelector("Footer");
       console.log(footer);
+
+      // Jeg har rykket section her ned, da den skal bruge til en ny article//
+      let mainSection = document.querySelector("section");
+      console.log(mainSection);
+
+      //Her laver jeg en ny article//
+
+      let newArticle = document.createElement("article");
+
+      let nytbillede = document.createElement("img");
+      nytbillede.src = "https://placeimg.com/640/480/tech";
+      newArticle.appendChild(nytbillede);
+
+      let overskrift = document.createElement("h3");
+      let overskriftText = document.createTextNode("Article 3.");
+      overskrift.appendChild(overskriftText);
+      newArticle.appendChild(overskrift);
+
+      let paragraf = document.createElement("p");
+      let paragrafText = document.createTextNode(
+        "Nu skriver jeg igen bare et eller andet, for at se om det virker"
+      );
+      paragraf.appendChild(paragrafText);
+      newArticle.appendChild(paragraf);
+
+      mainSection.appendChild(newArticle);
     </script>
   </body>
 </html>
