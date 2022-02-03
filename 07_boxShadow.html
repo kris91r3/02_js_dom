@@ -37,6 +37,24 @@
       h3:first-of-type + p {
         color: red;
       }
+
+      .boxshadow {
+        box-shadow: 11px 4px 6px 4px rgba(33, 1, 222, 0.55);
+      }
+
+      .skygge {
+        animation-name: skygge_kf;
+        animation-duration: 2s;
+      }
+
+      @keyframes skygge_kf {
+        from {
+          opacity: 0%;
+        }
+        to {
+          opacity: 100%;
+        }
+      }
     </style>
   </head>
   <body>
@@ -68,72 +86,68 @@
     </main>
     <footer>Footer</footer>
     <script>
-      document.addEventListener("DOMContentLoaded", start);
+      //   document.addEventListener("DOMContentLoaded", start);
 
-      function start() {
-        console.log("DOM er loaded");
+      //   function start() {
+      //     console.log("DOM er loaded");
 
-        const titel = document.querySelector("header");
-        console.log(titel);
-        titel.textContent = "billedegalleri";
+      const titel = document.querySelector("header");
+      console.log(titel);
+      titel.textContent = "billedegalleri";
 
-        const main = document.querySelector("main");
-        console.log(main);
+      const h2 = document.querySelector("h2");
+      console.log(h2);
 
-        const h2 = document.querySelector("h2");
-        console.log(h2);
+      const article1 = document.querySelector("#article1");
+      console.log(article1);
+      const article2 = document.querySelector("#article2");
+      console.log(article2);
 
-        const article1 = document.querySelector("#article1");
-        console.log(article1);
-        const article2 = document.querySelector("#article2");
-        console.log(article2);
+      const img2 = document.querySelector("article:nth-child(2) img");
+      console.log(img2);
 
-        const img2 = document.querySelector("article:nth-child(2) img");
-        console.log(img2);
+      const h3nr1 = document.querySelector("article:nth-child(1) h3");
+      console.log(h3nr1);
+      const h3nr2 = document.querySelector("article:nth-child(2) h3");
+      console.log(h3nr2);
+      h3nr1.innerHTML = "<i>Hell</i>";
+      h3nr2.textContent = "Yeah";
 
-        const h3nr1 = document.querySelector("article:nth-child(1) h3");
-        console.log(h3nr1);
-        const h3nr2 = document.querySelector("article:nth-child(2) h3");
-        console.log(h3nr2);
-        h3nr1.innerHTML = "<i>Hell</i>";
-        h3nr2.textContent = "Yeah";
+      const p1 = document.querySelector("article:nth-child(1) p");
+      console.log(p1);
+      const p2 = document.querySelector("article:nth-child(2) p");
+      console.log(p2);
+      p1.textContent = "Jeg skriver bare et eller andet for at tjekke";
+      p2.innerHTML = "Jeg tror <b>kraftedeme</b> det lykkedes!";
 
-        const p1 = document.querySelector("article:nth-child(1) p");
-        console.log(p1);
-        const p2 = document.querySelector("article:nth-child(2) p");
-        console.log(p2);
-        p1.textContent = "Jeg skriver bare et eller andet for at tjekke";
-        p2.innerHTML = "Jeg tror <b>kraftedeme</b> det lykkedes!";
+      // Jeg har rykket section her ned, da den skal bruge til en ny article//
+      let mainSection = document.querySelector("section");
+      console.log(mainSection);
 
-        const footer = document.querySelector("Footer");
-        console.log(footer);
+      //Her laver jeg en ny article//
 
-        // Jeg har rykket section her ned, da den skal bruge til en ny article//
-        let mainSection = document.querySelector("section");
-        console.log(mainSection);
+      let newArticle = document.createElement("article");
 
-        //Her laver jeg en ny article//
+      let nytbillede = document.createElement("img");
+      nytbillede.src = "https://placeimg.com/640/480/tech";
+      newArticle.appendChild(nytbillede);
 
-        let newArticle = document.createElement("article");
+      let overskrift = document.createElement("h3");
+      let overskriftText = document.createTextNode("Article 3.");
+      overskrift.appendChild(overskriftText);
+      newArticle.appendChild(overskrift);
 
-        let nytbillede = document.createElement("img");
-        nytbillede.src = "https://placeimg.com/640/480/tech";
-        newArticle.appendChild(nytbillede);
+      let paragraf = document.createElement("p");
+      let paragrafText = document.createTextNode(
+        "Nu skriver jeg igen bare et eller andet, for at se om det virker"
+      );
+      paragraf.appendChild(paragrafText);
+      newArticle.appendChild(paragraf);
 
-        let overskrift = document.createElement("h3");
-        let overskriftText = document.createTextNode("Article 3.");
-        overskrift.appendChild(overskriftText);
-        newArticle.appendChild(overskrift);
+      mainSection.appendChild(newArticle);
+      //   }
 
-        let paragraf = document.createElement("p");
-        let paragrafText = document.createTextNode(
-          "Nu skriver jeg igen bare et eller andet, for at se om det virker"
-        );
-        paragraf.appendChild(paragrafText);
-        newArticle.appendChild(paragraf);
-
-        mainSection.appendChild(newArticle);
-      }
+      // Her starter øvelse 6 hvor jeg udskifter billede 1//
 
       let tal = Math.round(Math.random() * 10);
       console.log(tal);
@@ -146,6 +160,32 @@
         console.log(billedeSkift);
 
         pic1.src = "https://placeimg.com/640/480/arch" + tal;
+      }
+
+      // Her laver vi øvelse 7 med boxshadow//
+
+      article1.classList.add("boxshadow");
+      article2.classList.add("boxshadow");
+      newArticle.classList.add("boxshadow");
+
+      article1.addEventListener("mouseover", toggleShadow);
+      article1.addEventListener("mouseout", toggleShadow);
+
+      article2.addEventListener("mouseover", toggleShadow);
+      article2.addEventListener("mouseout", toggleShadow);
+
+      newArticle.addEventListener("mouseover", toggleShadow);
+      newArticle.addEventListener("mouseout", toggleShadow);
+
+      function toggleShadow() {
+        console.log(toggleShadow);
+        article1.classList.toggle("boxshadow");
+        article2.classList.toggle("boxshadow");
+        newArticle.classList.toggle("boxshadow");
+
+        // document.querySelector(".boxshadow").classList.add("skygge");
+        // article2.classList.add("skygge");
+        // newArticle.classList.add("skygge");
       }
     </script>
   </body>
