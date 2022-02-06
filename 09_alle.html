@@ -10,10 +10,18 @@
         color: darkblue;
         line-height: 150%;
       }
+
+      .typo2 {
+        font-family: monospace;
+        font-size: 200%;
+        color: darkblue;
+        line-height: 150%;
+      }
     </style>
   </head>
 
   <body>
+    <button>Reset</button>
     <h3>En</h3>
     <p>
       Gochujang blue bottle iPhone quinoa, umami lumbersexual semiotics disrupt
@@ -45,6 +53,35 @@
       salvia direct trade tbh.
     </p>
 
-    <script></script>
+    <script>
+      document.addEventListener("DOMContentLoaded", start);
+
+      function start() {
+        console.log("Dom er loaded");
+
+        let alleP = document.querySelectorAll("p");
+        alleP.forEach((p) => {
+          p.addEventListener("click", () => {
+            p.classList.add("typo");
+          });
+        });
+
+        let alleH = document.querySelectorAll("h3");
+        alleH.forEach((h3) => {
+          h3.addEventListener("click", () => {
+            h3.classList.add("typo2");
+          });
+        });
+
+        document.querySelector("button").addEventListener("click", () => {
+          alleP.forEach((p) => {
+            p.classList.remove("typo");
+          });
+          alleH.forEach((h3) => {
+            h3.classList.remove("typo2");
+          });
+        });
+      }
+    </script>
   </body>
 </html>
